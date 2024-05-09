@@ -111,7 +111,6 @@ public class TCPTransport: Transport {
             case .ready:
                 self?.delegate?.connectionChanged(state: .connected)
             case .waiting(let error):
-                print("======NWConnection waiting \(error)")
                 self?.delegate?.connectionChanged(state: .failed(error))
             case .cancelled:
                 self?.delegate?.connectionChanged(state: .cancelled)
